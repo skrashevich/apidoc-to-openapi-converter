@@ -1,0 +1,40 @@
+{
+  "name": "apidoc-to-openapi-converter",
+  "version": "0.1.0",
+  "description": "Convert apiDoc api_data.js output to an OpenAPI 3 JSON spec.",
+  "keywords": [
+    "apidoc",
+    "openapi",
+    "swagger",
+    "converter"
+  ],
+  "homepage": "https://github.com/skrashevich/apidoc-to-openapi-converter",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skrashevich/apidoc-to-openapi-converter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/skrashevich/apidoc-to-openapi-converter/issues"
+  },
+  "license": "UNLICENSED",
+  "author": "",
+  "type": "commonjs",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "bin": {
+    "apidoc-to-openapi": "bin/apidoc-to-openapi.js"
+  },
+  "files": [
+    "src",
+    "bin",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "test": "node ./bin/apidoc-to-openapi.js --help > /dev/null"
+  }
+}

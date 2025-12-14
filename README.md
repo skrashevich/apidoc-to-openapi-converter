@@ -16,11 +16,33 @@ This project provides a Node.js script to convert API documentation written in [
    apidoc -i <source-code-folder> -o apidoc_output
    ```
    This produces a file called `api_data.js` inside the `apidoc_output` directory containing the extracted API information.
-2. Run the converter script on the `api_data.js` file and redirect the result to an OpenAPI file:
+2. Run the converter on the `api_data.js` file and redirect the result to an OpenAPI file:
    ```bash
    node converter.js apidoc_output/api_data.js > openapi.json
    ```
 3. Open `openapi.json` with an OpenAPI-compatible tool (e.g. Swagger UI) to view or further process the specification.
+
+## Install (npm)
+
+Global install (recommended for CLI):
+
+```bash
+npm i -g apidoc-to-openapi-converter
+apidoc-to-openapi apidoc_output/api_data.js > openapi.json
+```
+
+Without global install:
+
+```bash
+npx -p apidoc-to-openapi-converter apidoc-to-openapi apidoc_output/api_data.js > openapi.json
+```
+
+## Programmatic usage
+
+```js
+const { convertApiDocToOpenApi } = require('apidoc-to-openapi-converter');
+const openapiJson = convertApiDocToOpenApi({ apiDataPath: 'apidoc_output/api_data.js' });
+```
 
 ## Contributing
 Contributions are welcome! If you find a bug or have ideas for improvements, please open an issue or submit a pull request.
